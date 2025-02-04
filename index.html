@@ -56,7 +56,7 @@
       /* Opcional: transformar el texto a mayúsculas */
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
       /* Borde difuminado de color negro */
-      opacity: 0.9;
+      /*opacity: 0.9;*/
       /* Opacidad del texto */
     }
 
@@ -76,14 +76,14 @@
     .b-example-divider {
       width: 100%;
       height: 3rem;
-      background-color: rgba(48, 48, 48, .1);
-      border: solid rgba(0, 0, 0, .15);
+      background-color: rgba(48, 48, 48, 0.1);
+      border: solid rgba(0, 0, 0, .1);
       border-width: 1px 0;
-      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .1);
     }
 
     .container-fluid {
-      background-color: #303030;
+      background-color: rgb(82, 113, 255);
     }
 
     /*Cookies*/
@@ -92,8 +92,8 @@
       position: fixed;
       bottom: 0;
       width: 100%;
-      background-color: #333;
-      color: #fff;
+      background-color: #ffffff;
+      color: #5271ff;
       text-align: center;
       padding: 15px 0;
       z-index: 1000;
@@ -105,22 +105,23 @@
     }
 
     .cookie-consent a {
-      color: #fff;
+      color: #5271ff;
       text-decoration: underline;
     }
 
     .cookie-consent .btn {
-      background-color: #cfcfcf;
-      color: #303030;
-      border: none;
+      background-color: #ffffff;
+      color: #5271ff;
       padding: 10px 20px;
       margin-left: 15px;
       cursor: pointer;
       border-radius: 5px;
+      border-color: #5271ff;
     }
 
     .cookie-consent .btn:hover {
-      background-color: white;
+      background-color: #5271ff;
+      color: #ffffff;
     }
   </style>
 </head>
@@ -172,7 +173,7 @@
   <div class="b-example-divider"></div>
 
   <div>
-    <div class="px-4 pt-5  text-center border-bottom" style="background-color: #303030;">
+    <div class="px-4 pt-5  text-center border-bottom" style="background-color: #5271ff;">
       <h1 class="display-4 fw-bold" style="color: #fff;">Innovative Solutions</h1>
       <div class="col-lg-6 mx-auto">
         <p class="lead mb-4" style="color: #fff;">We deliver innovative solutions to our customers toughest challenges.
@@ -189,9 +190,9 @@
 
   <div class="b-example-divider"></div>
 
-  <div class="container-fluid">
+  <div class="container-fluid" style="background-color: #fff;">
     <div class="container px-4 py-5" id="custom-cards">
-      <h2 class="pb-2 border-bottom" style="color: #fff;">Mind Skills</h2>
+      <h2 class="pb-2 border-bottom" style="color: #5271ff;">Mind Skills</h2>
 
       <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
         <div class="col">
@@ -246,7 +247,7 @@
 
   <div class="container my-5">
     <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg"
-      style="background-color: #303030;">
+      style="background-color: #5271ff;">
       <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
         <h1 class="display-4 fw-bold lh-1" style="color: #fff;">Sustainable Solutions</h1>
         <p class="lead" style="color: #fff;">Quickly design and customize responsive mobile-first sites with Bootstrap,
