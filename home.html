@@ -152,8 +152,7 @@
                 </div>
             </div>
             <div class="carousel-item" data-bs-interval="3000">
-                <img src="Images/64c25f693e9978bb79c1bdf7_The Workflow of Creating Medical 3D Printed Models.jpg"
-                    class="d-block w-100" alt="...">
+                <img src="Images/64c25f693e9978bb79c1bdf7_The Workflow of Creating Medical 3D Printed Models.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption">
                     <h1>TRASCEND 3D PRINTING</h1>
                 </div>
@@ -288,36 +287,46 @@
     </div>
 
     <script>
-        //Carga la navbar
         document.addEventListener('DOMContentLoaded', function () {
             fetch('navbar.html')
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('navbar-container').innerHTML = data;
+
+                    // Mueve el código del scroll aquí
+                    const navbar = document.getElementById('navbar');
+                    if (navbar) {
+                        window.addEventListener('scroll', function () {
+                            if (navbar.classList.contains('transparent-nav')) {
+                                if (window.scrollY > 50) {
+                                    navbar.style.backgroundColor = 'var(--color-principal)';
+                                } else {
+                                    navbar.style.backgroundColor = 'transparent';
+                                }
+                            }
+                        });
+                    } else {
+                        console.error("Navbar no encontrado. Verifica el ID.");
+                    }
                 });
+
             // Cargar footer
             fetch('footer.html')
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('footer-container').innerHTML = data;
                 });
-        });
 
-        //Carga Cookies
-
-        document.addEventListener("DOMContentLoaded", function () {
-            // Comprueba si el usuario ya aceptó las cookies
+            // Código de cookies
             if (!getCookie("cookiesAccepted")) {
                 document.getElementById("cookieConsent").style.display = "block";
             }
 
-            // Maneja el clic en el botón de aceptación
             document.getElementById("acceptCookies").onclick = function () {
                 setCookie("cookiesAccepted", "true", 365);
                 document.getElementById("cookieConsent").style.display = "none";
             };
 
-            // Función para establecer una cookie
             function setCookie(name, value, days) {
                 var expires = "";
                 if (days) {
@@ -326,35 +335,26 @@
                     expires = "; expires=" + date.toUTCString();
                 }
                 document.cookie = name + "=" + (value || "") + expires + "; path=/";
+                console.log("Cookie creada:", document.cookie); // Depuración
             }
 
-            // Función para obtener una cookie
             function getCookie(name) {
                 var nameEQ = name + "=";
                 var ca = document.cookie.split(';');
                 for (var i = 0; i < ca.length; i++) {
                     var c = ca[i];
                     while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-                    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+                    if (c.indexOf(nameEQ) === 0) {
+                        console.log("Cookie encontrada:", c.substring(nameEQ.length, c.length)); // Depuración
+                        return c.substring(nameEQ.length, c.length);
+                    }
                 }
+                console.log("Cookie no encontrada:", name); // Depuración
                 return null;
             }
         });
-
-
-        window.addEventListener('scroll', function () {
-            const navbar = document.getElementById('navbar');
-            if (navbar.classList.contains('transparent-nav')) {
-                if (window.scrollY > 50) { // Cambia el fondo después de 50px de scroll
-                    navbar.style.backgroundColor = 'var(--color-principal)'; // Color de fondo al hacer scroll
-                } else {
-                    navbar.style.backgroundColor = 'transparent'; // Fondo transparente al inicio
-                }
-            }
-        });
-
-
     </script>
+
 
 </body>
 
