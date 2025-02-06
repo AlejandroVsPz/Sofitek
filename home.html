@@ -16,11 +16,23 @@
     <title>Sofitek</title>
 
     <style>
+        :root {
+            /* Define una variable de color */
+            /*--color-principal:  #3a86ff; */
+            --color-principal: #303030;
+        }
+
+        /* Fondo transparente al inicio */
+        #navbar.transparent-nav {
+            background-color: transparent;
+        }
+
+
         /* Estilos para el carrusel */
         .carousel-item img {
             width: 100%;
             /* Establece el ancho al 100% del contenedor */
-            height: 600px;
+            height: 800px;
             /* Establece una altura fija */
             object-fit: cover;
             /* Ajusta la imagen para cubrir el contenedor manteniendo su proporción */
@@ -82,9 +94,9 @@
             box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .1);
         }
 
-        .container-fluid {
-            background-color: rgb(82, 113, 255);
-        }
+        /*.container-fluid {
+            background-color: var(--color-principal);
+        }*/
 
         /*Cookies*/
 
@@ -93,7 +105,7 @@
             bottom: 0;
             width: 100%;
             background-color: #ffffff;
-            color: #5271ff;
+            color: var(--color-principal);
             text-align: center;
             padding: 15px 0;
             z-index: 1000;
@@ -105,22 +117,22 @@
         }
 
         .cookie-consent a {
-            color: #5271ff;
+            color: var(--color-principal);
             text-decoration: underline;
         }
 
         .cookie-consent .btn {
             background-color: #ffffff;
-            color: #5271ff;
+            color: var(--color-principal);
             padding: 10px 20px;
             margin-left: 15px;
             cursor: pointer;
             border-radius: 5px;
-            border-color: #5271ff;
+            border-color: var(--color-principal);
         }
 
         .cookie-consent .btn:hover {
-            background-color: #5271ff;
+            background-color: var(--color-principal);
             color: #ffffff;
         }
     </style>
@@ -172,7 +184,7 @@
     <div class="b-example-divider"></div>
 
     <div>
-        <div class="px-4 pt-5  text-center border-bottom" style="background-color: #5271ff;">
+        <div class="px-4 pt-5  text-center border-bottom" style="background-color: var(--color-principal);">
             <h1 class="display-4 fw-bold" style="color: #fff;">Innovative Solutions</h1>
             <div class="col-lg-6 mx-auto">
                 <p class="lead mb-4" style="color: #fff;">We deliver innovative solutions to our customers toughest
@@ -192,7 +204,7 @@
 
     <div class="container-fluid" style="background-color: #fff;">
         <div class="container px-4 py-5" id="custom-cards">
-            <h2 class="pb-2 border-bottom" style="color: #5271ff;">Mind Skills</h2>
+            <h2 class="pb-2 border-bottom" style="color: var(--color-principal);">Mind Skills</h2>
 
             <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
                 <div class="col">
@@ -253,7 +265,7 @@
 
     <div class="container my-5">
         <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg"
-            style="background-color: #5271ff;">
+            style="background-color: var(--color-principal);">
             <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
                 <h1 class="display-4 fw-bold lh-1" style="color: #fff;">Sustainable Solutions</h1>
                 <p class="lead" style="color: #fff;">Quickly design and customize responsive mobile-first sites with
@@ -328,6 +340,19 @@
                 return null;
             }
         });
+
+
+        window.addEventListener('scroll', function () {
+            const navbar = document.getElementById('navbar');
+            if (navbar.classList.contains('transparent-nav')) {
+                if (window.scrollY > 50) { // Cambia el fondo después de 50px de scroll
+                    navbar.style.backgroundColor = 'var(--color-principal)'; // Color de fondo al hacer scroll
+                } else {
+                    navbar.style.backgroundColor = 'transparent'; // Fondo transparente al inicio
+                }
+            }
+        });
+
 
     </script>
 

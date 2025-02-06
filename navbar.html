@@ -1,10 +1,20 @@
 <!-- navbar.html -->
-<nav class="navbar fixed-top navbar-expand-lg  custom-navbar">
+<nav id="navbar" class="navbar fixed-top navbar-expand-lg  custom-navbar transparent-nav">
 
   <style>
+    :root {
+      /* Define una variable de color */
+      /*--color-principal:  #3a86ff; */
+      --color-principal: #303030;
+    }
+
     .custom-navbar {
-      background-color: #5271ff;
+      background-color: transparent;
+      /* Fondo transparente al inicio */
+      transition: background-color 0.3s ease;
+      /* Transición suave */
       /* Color  personalizado */
+      background-color: var(--color-principal);
     }
 
     .navbar-nav .nav-link,
@@ -36,7 +46,7 @@
 
     /* Estilos personalizados para el dropdown */
     .dropdown-menu {
-      background-color: #5271ff;
+      background-color: var(--color-principal);
       /* Color de fondo del dropdown */
       font-family: 'Arial', sans-serif;
       /* Fuente del dropdown */
@@ -50,7 +60,7 @@
     .dropdown-menu .dropdown-item:hover {
       background-color: #ffffff;
       /* Color de fondo al pasar el cursor */
-      color: #5271ff;
+      color: var(--mainColor);
       /* Color del texto al pasar el cursor */
     }
 
