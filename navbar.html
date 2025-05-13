@@ -2,10 +2,9 @@
 <nav id="navbar" class="navbar fixed-top navbar-expand-lg  custom-navbar transparent-nav">
 
   <style>
-    :root {
-      /* Define una variable de color */
-      /*--color-principal:  #3a86ff; */
-      --color-principal: #303030;
+
+    .nav-link{
+      color: #ffffff;
     }
 
     .custom-navbar {
@@ -14,19 +13,36 @@
       transition: background-color 0.3s ease;
       /* Transición suave */
       /* Color  personalizado */
-      background-color: var(--color-principal);
+      background-color: var(--color-blanco);
     }
 
-    .navbar-nav .nav-link,
-    .navbar-brand {
-      color: #ffffff !important;
-      /* Color del texto personalizado */
-    }
 
     .navbar-nav .nav-link:hover {
-      color: #cfcfcf !important;
+      color: #ffffff !important;
       /* Color del texto al pasar el cursor */
     }
+
+    /**/
+    .navbar.scrolled {
+      background-color: #ffffff !important;
+      transition: background-color 0.3s ease;
+    }
+
+    .navbar.scrolled .nav-link,
+    .navbar.scrolled .navbar-brand,
+    .navbar.scrolled .dropdown-menu .dropdown-item {
+      color: #000000 !important;
+    }
+
+    .navbar.scrolled .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+    .navbar.scrolled .navbar-toggler {
+      border-color: rgba(0, 0, 0, 1);
+    }
+
+    /**/
 
     @media (min-width: 992px) {
 
@@ -46,7 +62,7 @@
 
     /* Estilos personalizados para el dropdown */
     .dropdown-menu {
-      background-color: var(--color-principal);
+      background-color: var(--color-negro);
       /* Color de fondo del dropdown */
       font-family: 'Arial', sans-serif;
       /* Fuente del dropdown */
@@ -85,7 +101,8 @@
 
   <div class="container-fluid">
     <a class="navbar-brand" href="home.html">
-      <img src="Images/sofiteklogo.png" alt="Sofitek" width="134" height="45" class="d-inline-block align-text-top">
+      <img src="Images/AVP-logo.png" id="logo" idalt="AVP" width="20%" height="30%"
+        class="d-inline-block align-text-top">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -130,3 +147,13 @@
     </div>
   </div>
 </nav>
+<script>
+  window.addEventListener('scroll', function () {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+</script>
