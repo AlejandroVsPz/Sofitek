@@ -19,16 +19,8 @@
         :root {
             /* Define una variable de color */
             /*--color-principal:  #3a86ff; */
-            --color-principal:   #303030; 
-        }
-
-        .b-example-divider {
-            width: 100%;
-            height: 3rem;
-            background-color: rgba(48, 48, 48, .1);
-            border: solid rgba(0, 0, 0, .15);
-            border-width: 1px 0;
-            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+            --color-blanco: #ffffff;
+            --color-negro: #000000;
         }
 
         /*.container-fluid {
@@ -43,7 +35,7 @@
         <!-- La barra de navegación será cargada aquí -->
     </header>
 
-    <div class="b-example-divider"></div>
+
 
     <div class="container px-5 py-5" id="custom-cards">
         <h2 class="pb-2 border-bottom" style="color: var(--color-principal);">Solutions and Services</h2>
@@ -257,6 +249,10 @@
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('navbar-container').innerHTML = data;
+
+                    const navbar = document.getElementById('navbar');
+                    navbar.style.backgroundColor = 'var(--color-negro)';
+
                 });
             // Cargar footer
             fetch('footer.html')
